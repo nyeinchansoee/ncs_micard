@@ -1,37 +1,101 @@
-## Welcome to GitHub Pages
+import 'package:flutter/material.dart';
 
-You can use the [editor on GitHub](https://github.com/nyeinchansoee/ncs_micard/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+void main() {
+  runApp(MyApp());
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nyeinchansoee/ncs_micard/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // ),
+      home: Scaffold(
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                  child: Image(
+                height: 200,
+                // width: double.infinity,
+                image: AssetImage('images/GOODDAY.jpg'),
+              )),
+              SizedBox(
+                height: 20,
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.blue[300],
+                radius: 50.0,
+                backgroundImage: AssetImage('images/myicon.jpg'),
+              ),
+              Text(
+                'Good Day',
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Design and Printing',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.yellow,
+                  letterSpacing: 2.5,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+                width: 100,
+                child: Divider(
+                  color: Colors.teal.shade100,
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                color: Colors.white,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    '+959450064323',
+                    style: TextStyle(
+                      color: Colors.teal,
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                color: Colors.white,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'gooddayprinting@gmail.com',
+                    style: TextStyle(
+                      color: Colors.teal,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
